@@ -5,8 +5,8 @@ const Skills = () => {
   const elements = skillGrid.map((items, index) => {
     return (
       <div key={index} className="w-[259px] h-[93px]">
-        <div className="flex">
-          <div>{items.logo}</div>
+        <div className="flex items-center">
+          <div className="mr-[5px]">{items.logo}</div>
           <div className="text-[16px] font-medium">{items.heading}</div>
         </div>
         <p className="text-[16px] mt-[10px] text-[rgba(255,255,255,0.7)]">

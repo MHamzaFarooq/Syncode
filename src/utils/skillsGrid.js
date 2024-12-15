@@ -1,31 +1,38 @@
+import AssignmentsIcon from "@/assets/assignmentsIcon";
+import FeedbackIcon from "@/assets/feedbackIcon";
+import FriendlyIcon from "@/assets/friendlyIcon";
+import GetNotifiedIcon from "@/assets/getNotifiedIcon";
+import IntractivityIcon from "@/assets/intractivityIcon";
+import ProgressIcon from "@/assets/progressIcon";
+
 export const skillGrid = [
   {
-    logo: "InterfaceLogo",
+    logo: <FriendlyIcon />,
     heading: "User-friendly dashboard",
     desc: "An easy to navigate dashboard to keep track of everything",
   },
   {
-    logo: "logo",
+    logo: <IntractivityIcon />,
     heading: "Super interactive videos",
     desc: "Just a click away from using the built-in compiler",
   },
   {
-    logo: "logo",
+    logo: <GetNotifiedIcon />,
     heading: "Feedback",
     desc: "Get a human feedback directly from your teacher",
   },
   {
-    logo: "logo",
+    logo: <AssignmentsIcon />,
     heading: "User-friendly dashboard",
     desc: "An easy to navigate dashboard to keep track of everything",
   },
   {
-    logo: "logo",
+    logo: <FeedbackIcon />,
     heading: "User-friendly dashboard",
     desc: "An easy to navigate dashboard to keep track of everything",
   },
   {
-    logo: "logo",
+    logo: <ProgressIcon />,
     heading: "User-friendly dashboard",
     desc: "An easy to navigate dashboard to keep track of everything",
   },
