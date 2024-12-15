@@ -10,7 +10,7 @@ const Sidebar = () => {
       <div className="w-[258px] h-full">
         <div className="flex items-center gap-4 mb-[72px]">
           <LogoSVG />
-          <div className="text-white block">Syncode</div>
+          <div className="text-white block">lmaofaggot</div>
         </div>
         <div className="h-full flex flex-col">
           <div>
