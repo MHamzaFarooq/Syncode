@@ -21,8 +21,13 @@ const HeroTitle = () => {
       </div>
 
       <div className="flex justify-center relative">
-        <div className="relative w-full aspect-[1118/501]">
-          <Image src={"/hero-image.png"} fill className="z-10" />
+        <div className="relative w-full aspect-[1118/501] hover:scale-105 transition-all duration-300">
+          <Image
+            src={"/hero-image.png"}
+            alt="Hero Image"
+            fill
+            className="z-10"
+          />
         </div>
       </div>
     </>

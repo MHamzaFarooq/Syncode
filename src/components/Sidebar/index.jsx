@@ -6,7 +6,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <div className="w-[330px] p-9 flex justify-center fixed left-0 bottom-0 top-0 border-r border-r-[rgba(255,255,255,0.1)]">
+    <div className="w-[330px] p-9 flex justify-center fixed h-screen border-r border-r-[rgba(255,255,255,0.1)]">
       <div className="w-[258px] flex flex-col h-full">
         <div className="flex items-center gap-4 mb-[72px]">
           <LogoSVG />

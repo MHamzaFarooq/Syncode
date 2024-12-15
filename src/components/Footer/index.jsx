@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <Button label={"Get Started Now"} />
         </div>
-        <Image className="-z-10" src={"/blob.png"} fill />
+        <Image className="-z-10" src={"/blob.png"} alt="blog" fill />
         <GridSVG className="absolute -z-10 inset-0 w-full -top-3/4" />
       </div>
     </>

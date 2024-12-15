@@ -6,7 +6,7 @@ const TechStack = () => {
     return (
       <div
         key={index}
-        className="bg-transparent border border-[rgba(255,255,255,0.15)] md:max-w-[235px] w-full rounded-[10px] py-8 px-10 flex items-center justify-center"
+        className="bg-transparent border border-[rgba(255,255,255,0.15)] md:max-w-[235px] w-full rounded-[10px] py-8 px-10 flex items-center justify-center cursor-pointer hover:scale-105 duration-300"
       >
         <div className="mr-[10px]">{<item.logo className="w-9 h-9" />}</div>
         <span className="hidden md:block text-lg font-semibold">
