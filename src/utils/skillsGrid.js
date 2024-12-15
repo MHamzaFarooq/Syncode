@@ -14,26 +14,26 @@ export const skillGrid = [
   {
     logo: <IntractivityIcon />,
     heading: "Super interactive videos",
-    desc: "Just a click away from using the built-in compiler",
+    desc: "Highly interactive videos with real-time compiler built-in",
   },
   {
     logo: <GetNotifiedIcon />,
-    heading: "Feedback",
-    desc: "Get a human feedback directly from your teacher",
+    heading: "Get Notified",
+    desc: "Keep yourself updated by getting notifications from your instructor",
   },
   {
     logo: <AssignmentsIcon />,
-    heading: "User-friendly dashboard",
-    desc: "An easy to navigate dashboard to keep track of everything",
+    heading: "Fun Assignments",
+    desc: "Get practical experience by solving in-video assignments",
   },
   {
     logo: <FeedbackIcon />,
-    heading: "User-friendly dashboard",
-    desc: "An easy to navigate dashboard to keep track of everything",
+    heading: "Quick Feedback",
+    desc: "Immediate feedback to your assignment and tasks",
   },
   {
     logo: <ProgressIcon />,
-    heading: "User-friendly dashboard",
-    desc: "An easy to navigate dashboard to keep track of everything",
+    heading: "Progress",
+    desc: "Track how much you learn by real-time progress tracker",
   },
 ];
