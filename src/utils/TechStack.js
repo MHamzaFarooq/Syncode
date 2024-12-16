@@ -1,19 +1,20 @@
 import FigmaSVG from "@/assets/Figma";
 import NextSVG from "@/assets/Next";
 import ReactSVG from "@/assets/React";
+import Shadcn from "@/assets/Shadcn";
 import TailwindSVG from "@/assets/Tailwind";
 
 export const techStack = [
   {
-    name: "Next.Js",
+    name: "Next",
     logo: NextSVG,
   },
   {
-    name: "React.Js",
+    name: "React",
     logo: ReactSVG,
   },
   {
-    name: "TailwindCSS",
+    name: "Tailwind",
     logo: TailwindSVG,
   },
   {
@@ -21,8 +22,8 @@ export const techStack = [
     logo: FigmaSVG,
   },
   {
-    name: "Next.Js",
-    logo: NextSVG,
+    name: "Shadcn/ui",
+    logo: Shadcn,
   },
   {
     name: "React.Js",

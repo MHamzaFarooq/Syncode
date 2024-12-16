@@ -6,9 +6,8 @@ const NotificationPage = () => {
       <div className="w-[330px] p-9"></div>
       <div className="flex flex-1 flex-col">
         <NotificationCard
-          heading="Notifications"
-          assignment="Assignment"
-          assignmentNo="1"
+          assignment="Assignment: 2"
+          assignmentNo="Printing Hello world!"
           badgeText="Marked"
           badgeColor="bg-[#0000FF]"
         />

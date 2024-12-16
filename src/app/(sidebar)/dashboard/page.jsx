@@ -24,11 +24,12 @@ const Dashboard = () => {
       <div className="flex flex-1 flex-col">
         <DashboardHero />
         <Card
-          heading="Courses"
+          heading="Available Courses"
           title="Learn C++ Fundamentals"
           desc="Unlock the power of C++ and take your coding skills to the next level! Master the building blocks of one of the most powerful programming languages. Ready to code like a pro? Let’s get started!"
           badgeColor="bg-[#0000FF]"
           badgeText="New"
+          blur="none"
         />
         <div className="flex">{cardElement}</div>
       </div>
