@@ -11,12 +11,12 @@ const Card = (props) => {
           <div className="flex items-center justify-between">
             <h1 className="text-[24px] font-medium">{props.title}</h1>
             <div
-              className={`py-[4px] px-[8px] bg-[#${props.badgeColor}] rounded-full text-[8px] font-bold`}
+              className={`py-[4px] px-[8px] ${props.badgeColor} rounded-full text-[8px] font-bold`}
             >
               {props.badgeText}
             </div>
           </div>
-          <div className="mt-[16px] text-[16px]  font-normal max-w-[966px] text-[#6D6D6D]">
+          <div className="mt-[16px] text-[16px] font-normal max-w-[966px] text-[#6D6D6D]">
             {props.desc}
           </div>
           <div className="mt-9 flex items-center justify-between">
