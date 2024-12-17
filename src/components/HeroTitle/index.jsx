@@ -1,6 +1,3 @@
-import Button from "../../assets/Button";
-import HeroImage from "@/public/hero-image.png";
-import BackgroundImage from "@/public/background-element.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,10 +15,10 @@ const HeroTitle = () => {
           Elevate your C++ skills with super interactive videos in-video
           assignments and much much more!
         </p>
-        <div className="bg-transparent p-2 border border-[rgba(255,255,255,0.15)] hover:border-[rgba(255,255,255,0.35)] transition-all w-fit rounded-2xl">
+        <div className="bg-transparent px-3 py-4 border border-[rgba(255,255,255,0.15)] hover:border-[rgba(255,255,255,0.35)] transition-all w-fit rounded-2xl">
           <Link
             href={"/dashboard"}
-            className="bg-white text-black px-[15px] py-[5px] rounded-lg text-[15px] font-medium"
+            className="bg-white text-black px-[16px] py-[8px] rounded-lg text-[15px] font-medium"
           >
             Get Started
           </Link>

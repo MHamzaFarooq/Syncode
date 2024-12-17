@@ -12,10 +12,10 @@ const Footer = () => {
           <div className=" text-[48px] md:text-[64px] font-medium text-center mb-[16px]">
             What are you waiting for?
           </div>
-          <div className="bg-transparent p-2 border border-[rgba(255,255,255,0.15)] hover:border-[rgba(255,255,255,0.35)] transition-all w-fit rounded-2xl">
+          <div className="bg-transparent px-3 py-4 border border-[rgba(255,255,255,0.15)] hover:border-[rgba(255,255,255,0.35)] transition-all rounded-2xl">
             <Link
               href={"/dashboard"}
-              className="bg-white text-black px-[15px] py-[5px] rounded-lg text-[15px] font-medium"
+              className="bg-white text-black px-[16px] py-[8px] rounded-lg text-[15px] font-medium"
             >
               Get Started Now
             </Link>
