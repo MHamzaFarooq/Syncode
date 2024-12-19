@@ -2,10 +2,18 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Badge } from "../ui/badge";
-import { Submissions } from "@/utils/submissions";
+import { submissions } from "@/utils/submissions";
 
-const Card = (props) => {
-  const assignmentMapping = Submissions.map((item, index) => {
+const Card = ({ setIsModalOpen, setRender }) => {
+  const handleFeedbackOpen = () => {
+    setIsModalOpen(true);
+    setRender("feedback");
+  };
+  const handleReviewedOpen = () => {
+    setIsModalOpen(true);
+    setRender("reviewed");
+  };
+  const assignmentMapping = submissions.map((item, index) => {
     return (
       <>
         <div key={index} className="mt-4 w-full cursor-pointer">
@@ -27,9 +35,13 @@ const Card = (props) => {
               </h1>
               <div className="w-[132px] flex justify-end">
                 {item.feedback ? (
-                  <Button variant="secondary">Give Feedback</Button>
+                  <Button onClick={handleFeedbackOpen} variant="secondary">
+                    Give Feedback
+                  </Button>
                 ) : (
-                  <Button variant="default">Reviewed</Button>
+                  <Button onClick={handleReviewedOpen} variant="default">
+                    Reviewed
+                  </Button>
                 )}
               </div>
             </div>
@@ -39,7 +51,7 @@ const Card = (props) => {
     );
   });
   return (
-    <div className="mt-[72px] p-9">
+    <div className="my-[72px] p-9">
       <h1 className="text-[32px] font-medium h-[48px]">Submissions</h1>
       {assignmentMapping}
     </div>

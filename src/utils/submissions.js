@@ -1,4 +1,4 @@
-export const Submissions = [
+export const submissions = [
   {
     enrollment: "01-134212-117",
     assignmentNo: 1,

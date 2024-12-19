@@ -20,7 +20,6 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="w-[330px] p-9"></div>
       <div className="flex flex-1 flex-col">
         <DashboardHero />
         <Card
@@ -31,7 +30,7 @@ const Dashboard = () => {
           badgeText="New"
           blur="none"
         />
-        <div className="flex">{cardElement}</div>
+        <div className="flex pb-[100px]">{cardElement}</div>
       </div>
     </>
   );

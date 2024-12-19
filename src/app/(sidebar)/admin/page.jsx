@@ -1,12 +1,19 @@
+"use client";
 import Card from "@/components/Admin/Card";
+import FeedbackModal from "@/components/FeedbackModal";
 import Image from "next/image";
-import React from "react";
-// import { Button } from "@/components/ui/button"
+import React, { useState } from "react";
 
 const Admin = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [render, setRender] = useState("feedback");
   return (
     <>
-      <div className="w-[330px] p-9"></div>
+      <FeedbackModal
+        render={render}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
       <div className="flex flex-1 flex-col">
         <div className="h-[261px] w-full relative overflow-hidden border-b border-b-[rgba(255,255,255,0.1)]">
           <div className="font-semibold text-7xl p-9 h-full flex flex-col justify-center">
@@ -22,7 +29,7 @@ const Admin = () => {
             fill
           />
         </div>
-        <Card />
+        <Card setRender={setRender} setIsModalOpen={setIsModalOpen} />
       </div>
     </>
   );

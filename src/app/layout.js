@@ -1,9 +1,13 @@
 import LenisScrollProvider from "@/providers/LenisScroll";
 import "./globals.css";
 
-import { Inter } from "next/font/google";
+import { Inter, Inconsolata } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const inconsolata = Inconsolata({
+  subsets: ["latin"],
+  variable: "--font-inconsolata",
+});
 
 export const metadata = {
   title: "Syncode",
@@ -13,7 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased bg-black text-white`}>
+      <body
+        className={`${inter.className} ${inconsolata.variable} antialiased bg-black text-white`}
+      >
         <LenisScrollProvider>{children}</LenisScrollProvider>
       </body>
     </html>
