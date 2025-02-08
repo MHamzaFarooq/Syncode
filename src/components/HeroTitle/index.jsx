@@ -1,13 +1,8 @@
-"use client";
 import Image from "next/image";
-import Modal from "./modal";
-import { useState } from "react";
-
+import Link from "next/link";
 const HeroTitle = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
-      <Modal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
       <div className="relative mt-20 text-center flex flex-col items-center mb-9 z-1 sm:z-10">
         <h1 className="flex flex-col text-center text-5xl md:text-[82px] tracking-[-0.0506em] font-medium md:leading-[84px]">
           <span>The ultimate way of</span>
@@ -20,12 +15,11 @@ const HeroTitle = () => {
           assignments and much much more!
         </p>
         <div className="bg-transparent p-2 border border-[rgba(255,255,255,0.15)] hover:border-[rgba(255,255,255,0.35)] transition-all w-fit rounded-2xl">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="bg-white text-black px-[16px] py-[8px] rounded-lg text-[15px] font-medium"
-          >
-            Get Started
-          </button>
+          <Link href={"/login"}>
+            <button className="bg-white text-black px-[16px] py-[8px] rounded-lg text-[15px] font-medium">
+              Get Started
+            </button>
+          </Link>
         </div>
       </div>
       <div className="flex justify-center relative">
