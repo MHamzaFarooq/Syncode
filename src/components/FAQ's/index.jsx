@@ -9,14 +9,12 @@ import faqs from "@/utils/faqs";
 const FAQs = () => {
   const element = faqs.map((item, index) => {
     return (
-      <>
-        <Accordion key={index} type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>{item.question}</AccordionTrigger>
-            <AccordionContent>{item.answer}</AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </>
+      <Accordion key={index} type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>{item.question}</AccordionTrigger>
+          <AccordionContent>{item.answer}</AccordionContent>
+        </AccordionItem>
+      </Accordion>
     );
   });
 

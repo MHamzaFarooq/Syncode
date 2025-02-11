@@ -2,6 +2,8 @@ import LenisScrollProvider from "@/providers/LenisScroll";
 import "./globals.css";
 
 import { Inter, Inconsolata } from "next/font/google";
+import ReactQueryProvider from "@/providers/ReactQuery";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 const inconsolata = Inconsolata({
@@ -20,7 +22,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} ${inconsolata.variable} antialiased bg-black text-white`}
       >
-        <LenisScrollProvider>{children}</LenisScrollProvider>
+        <Toaster position="bottom-right" />
+        <ReactQueryProvider>
+          <LenisScrollProvider>{children}</LenisScrollProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

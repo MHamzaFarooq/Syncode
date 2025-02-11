@@ -1,21 +1,41 @@
 "use client";
-import { useState } from "react";
-import BorderButton from "../Button/borderButton";
-import AuthInputField from "./inputfield";
-import GoogleButton from "../Button/google";
+import { login } from "@/actions/auth";
+import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { toast } from "sonner";
+import BorderButton from "../Button/borderButton";
+import GoogleButton from "../Button/google";
+import AuthInputField from "./inputfield";
+import { setStudentDataInSession } from "@/actions/setSession";
 
 const LoginForm = () => {
   const router = useRouter();
-  const [enroll, setEnroll] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("bruh@gmail.com");
+  const [password, setPassword] = useState("bruhmius");
+
+  const loginMutation = useMutation({
+    mutationFn: () => login(email, password),
+    onSuccess: async (data) => {
+      toast.success("Login Successful");
+      await setStudentDataInSession(data);
+    },
+    onError: (error) => {
+      toast.error(error?.error || "Login Failed");
+    },
+  });
+
+  const handleLogin = () => {
+    loginMutation.mutate();
+  };
+
   return (
     <div className="p-9">
       <AuthInputField
         type={"text"}
-        placeholder={"Enrollment"}
-        value={enroll}
-        onChange={(e) => setEnroll(e.target.value)}
+        placeholder={"Email"}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <AuthInputField
         type={"password"}
@@ -25,8 +45,9 @@ const LoginForm = () => {
         className={"my-4"}
       />
       <BorderButton
+        onClick={handleLogin}
+        isLoading={loginMutation.isPending}
         label={"Log in"}
-        onClick={() => {}}
         parentClass={"w-full"}
         className="bg-[#0000FF] w-full"
       />

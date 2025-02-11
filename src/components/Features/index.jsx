@@ -14,7 +14,7 @@ const Features = () => {
         <div className="flex flex-col items-center md:items-start md:flex-row gap-[10px] max-w-[1118px] w-full">
           <div className="max-w-[346px] h-[400px] w-full md:w-[346px] justify-between flex flex-col items-center bg-transparent border border-[rgba(255,255,255,0.15)] rounded-[10px]">
             <div className="mt-[10px] mx-[56px] relative w-[234px] h-[234px]">
-              <Image src={"/cone.png"} fill />
+              <Image src={"/cone.png"} fill alt="cone image" />
             </div>
             <div className="mx-10 mb-10 w-[225px]">
               <span className="text-base font-medium">

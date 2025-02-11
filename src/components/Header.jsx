@@ -1,6 +1,5 @@
 "use client";
 import LogoSVG from "@/assets/Logo";
-import Link from "next/link";
 
 const Header = () => {
   const scrollToTop = (e) => {

@@ -1,9 +1,12 @@
+import ClipLoader from "react-spinners/ClipLoader";
 export default function BorderButton({
   label,
   className = "bg-white text-black",
   parentClass,
   onClick,
   type = "button",
+  isLoading = false,
+  loaderColor = "white",
 }) {
   return (
     <>
@@ -13,9 +16,13 @@ export default function BorderButton({
         <button
           type={type}
           onClick={onClick}
-          className={`font-medium leading-[31px] tracking-[-1.01%] px-[15px] py-[5px] rounded-lg text-[15px] ${className}`}
+          className={`font-medium flex items-center justify-center leading-[31px] h-[41px] tracking-[-1.01%] px-[15px] py-[5px] rounded-lg text-[15px] ${className}`}
         >
-          {label}
+          {isLoading ? (
+            <ClipLoader loading={isLoading} size={24} color={loaderColor} />
+          ) : (
+            label
+          )}
         </button>
       </div>
     </>

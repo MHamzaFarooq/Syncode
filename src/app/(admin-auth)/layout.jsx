@@ -2,10 +2,10 @@ import { getSession } from "@/actions/ironSession";
 import CSRFTokenProvider from "@/providers/csrf";
 import { redirect } from "next/navigation";
 
-const AuthLayout = async ({ children }) => {
+const AdminAuthLayout = async ({ children }) => {
   const session = await getSession();
-  if (session.isLoggedIn) {
-    redirect("/dashboard");
+  if (session.isAdminLoggedIn) {
+    redirect("/admin");
   }
   return (
     <CSRFTokenProvider>
@@ -23,4 +23,4 @@ const AuthLayout = async ({ children }) => {
   );
 };
 
-export default AuthLayout;
+export default AdminAuthLayout;
