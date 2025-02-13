@@ -16,25 +16,18 @@ const Card = (props) => {
       </div>
       <div className="mt-9 flex items-center justify-between">
         <div className="flex gap-6">
-          <p className="text-[12px]">C++</p>
-          <p className="text-[12px]">3.4 Hours</p>
-          <p className="text-[12px]">Beginner Level</p>
+          <p className="text-[12px]">{props.language}</p>
+          <p className="text-[12px]">{props.hours}</p>
+          <p className="text-[12px]">{props.level}</p>
         </div>
-        <div className="text-[12px]">Dr. Erum Ashraf</div>
+        <div className="text-[12px]">Dr. {props.teacher}</div>
       </div>
     </div>
   );
 
   return (
-    <div className="mt-[72px] p-9">
-      <h1 className="text-[32px] font-medium h-[48px]">{props.heading}</h1>
-      <div className={`${props.blur} mt-4 w-full h-[213px] cursor-pointer`}>
-        {props.href ? (
-          <Link href={props.href}>{CardContent}</Link>
-        ) : (
-          CardContent
-        )}
-      </div>
+    <div className={`min-w-64  ${props.blur} w-full cursor-pointer`}>
+      {props.href ? <Link href={props.href}>{CardContent}</Link> : CardContent}
     </div>
   );
 };
