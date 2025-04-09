@@ -26,7 +26,6 @@ const UpcomingCourses = () => {
             {data.courses.map((item, index) => (
               <Card
                 key={index}
-                href="/videos-page"
                 title={item.title}
                 desc={item.description}
                 level={item.level}
