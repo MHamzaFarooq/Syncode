@@ -1,12 +1,13 @@
 "use client";
-import { sidebarMenu } from "@/utils/sidebarMenu";
+import { sidebarMenu, sidebarMenuAdmin } from "@/utils/sidebarMenu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-const SidebarLinks = () => {
+const SidebarLinks = ({ isAdmin }) => {
   const pathName = usePathname();
+  const list = isAdmin ? sidebarMenuAdmin : sidebarMenu;
   return (
     <div>
-      {sidebarMenu.map((item, index) => {
+      {list.map((item, index) => {
         return (
           <Link
             key={index}

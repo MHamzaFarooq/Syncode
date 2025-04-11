@@ -1,5 +1,5 @@
 import { getSession } from "@/actions/ironSession";
-// import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/Sidebar";
 import { redirect } from "next/navigation";
 
 export default async function AdminLayout({ children }) {
@@ -9,9 +9,9 @@ export default async function AdminLayout({ children }) {
   }
   return (
     <main className="flex">
-      {/* <Sidebar />
-      <div className="w-[330px] p-9"></div> */}
-      {children}
+      <Sidebar isAdmin={true} />
+      <div className="w-[330px] p-9"></div>
+      <div className="flex flex-col flex-1">{children}</div>
     </main>
   );
 }

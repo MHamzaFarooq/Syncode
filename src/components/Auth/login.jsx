@@ -8,8 +8,10 @@ import BorderButton from "../Button/borderButton";
 import GoogleButton from "../Button/google";
 import AuthInputField from "./inputfield";
 import { setStudentDataInSession } from "@/actions/setSession";
+import { useCSRF } from "@/providers/csrf";
 
 const LoginForm = () => {
+  const { tokenLoaded, isLoading } = useCSRF();
   const router = useRouter();
   const [email, setEmail] = useState("bruh@gmail.com");
   const [password, setPassword] = useState("bruhmius");

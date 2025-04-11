@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter, Inconsolata } from "next/font/google";
 import ReactQueryProvider from "@/providers/ReactQuery";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const inconsolata = Inconsolata({
@@ -18,14 +19,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className} ${inconsolata.variable} antialiased bg-black text-white`}
       >
-        <Toaster position="bottom-right" />
-        <ReactQueryProvider>
-          <LenisScrollProvider>{children}</LenisScrollProvider>
-        </ReactQueryProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Toaster position="bottom-right" />
+          <ReactQueryProvider>
+            <LenisScrollProvider>{children}</LenisScrollProvider>
+          </ReactQueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -22,7 +22,7 @@ const AvailableCourses = () => {
           {data.courses.map((item, index) => (
             <Card
               key={index}
-              href="/videos-page"
+              href={`/videos-page/${item.course_id}`}
               title={item.title}
               desc={item.description}
               level={item.level}

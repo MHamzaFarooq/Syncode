@@ -1,6 +1,8 @@
 import AboutIcon from "@/assets/About";
+import AssignmentSVG from "@/assets/Assignment";
 import HomeBtn from "@/assets/HomeBtn";
 import NotificationIcon from "@/assets/NotificationIcon";
+import RecorderSVG from "@/assets/Recorder";
 
 export const sidebarMenu = [
   {
@@ -17,5 +19,23 @@ export const sidebarMenu = [
     icon: AboutIcon,
     iconLabel: "About Us",
     href: "/about",
+  },
+];
+
+export const sidebarMenuAdmin = [
+  {
+    icon: HomeBtn,
+    iconLabel: "Home",
+    href: "/admin",
+  },
+  {
+    icon: RecorderSVG,
+    iconLabel: "Recorder",
+    href: "/record",
+  },
+  {
+    icon: AssignmentSVG,
+    iconLabel: "Assignments",
+    href: "/add-assignment",
   },
 ];
