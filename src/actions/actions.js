@@ -57,6 +57,23 @@ export const getTeacherCourses = async (id) => {
   }
 };
 
+export const getTeacherCoursesAndVids = async (id) => {
+  try {
+    const response = await axiosInstance.get(
+      `/course/get-teacher-courses-and-vids?teacher_id=${id}`
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw (
+        error.response?.data ||
+        new Error("Error getting Teacher courses and vids")
+      );
+    }
+    throw error;
+  }
+};
+
 export const uploadVideo = async (course_id, name, events, audioBlob) => {
   console.log("course_id: ", course_id);
   console.log("name: ", name);
@@ -107,6 +124,60 @@ export const getVideo = async (video_id) => {
   } catch (error) {
     if (axios.isAxiosError(error)) {
       throw error.response?.data || new Error("Error getting Video");
+    }
+    throw error;
+  }
+};
+
+export const addCourse = async (
+  teacher_id,
+  title,
+  description,
+  programming_language,
+  level,
+  status
+) => {
+  try {
+    const response = await axiosInstance.post(`/course/create-course/`, {
+      teacher_id,
+      title,
+      description,
+      programming_language,
+      level,
+      status,
+    });
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw error.response?.data || new Error("Failed to Add Course");
+    }
+    throw error;
+  }
+};
+
+export const deleteCourse = async (course_id) => {
+  try {
+    const response = await axiosInstance.post(`/course/delete-course`, {
+      course_id,
+    });
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw error.response?.data || new Error("Failed to Delete Course");
+    }
+    throw error;
+  }
+};
+
+export const deleteVideo = async (video_id) => {
+  try {
+    const response = await axiosInstance.post(`/video/delete-video/`, {
+      video_id,
+    });
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw error.response?.data || new Error("Failed to Delete Video");
     }
     throw error;
   }

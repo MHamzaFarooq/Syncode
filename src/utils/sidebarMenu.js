@@ -1,5 +1,6 @@
 import AboutIcon from "@/assets/About";
 import AssignmentSVG from "@/assets/Assignment";
+import CoursesSVG from "@/assets/CoursesSVG";
 import HomeBtn from "@/assets/HomeBtn";
 import NotificationIcon from "@/assets/NotificationIcon";
 import RecorderSVG from "@/assets/Recorder";
@@ -37,5 +38,10 @@ export const sidebarMenuAdmin = [
     icon: AssignmentSVG,
     iconLabel: "Assignments",
     href: "/add-assignment",
+  },
+  {
+    icon: CoursesSVG,
+    iconLabel: "Courses",
+    href: "/courses",
   },
 ];
