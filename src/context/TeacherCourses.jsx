@@ -1,3 +1,4 @@
+"use client";
 import { getTeacherCourses } from "@/actions/actions";
 import { useQuery } from "@tanstack/react-query";
 import { createContext, useContext, useState } from "react";

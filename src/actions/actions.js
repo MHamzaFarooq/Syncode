@@ -182,3 +182,49 @@ export const deleteVideo = async (video_id) => {
     throw error;
   }
 };
+
+export const addAssignment = async (name, code, course_id) => {
+  try {
+    const response = await axiosInstance.post(`/assignment/add-assignment/`, {
+      name,
+      code,
+      course_id,
+    });
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw error.response?.data || new Error("Failed to Add Assignment");
+    }
+    throw error;
+  }
+};
+
+export const getAssignment = async (assignment_id) => {
+  try {
+    const response = await axiosInstance.get(
+      `/assignment/get-assignment?assignment_id=${assignment_id}`
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw error.response?.data || new Error("Error getting Assignment");
+    }
+    throw error;
+  }
+};
+
+export const getCourseAssignments = async (course_id) => {
+  try {
+    const response = await axiosInstance.get(
+      `/assignment/get-assignments-by-course?course_id=${course_id}`
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw (
+        error.response?.data || new Error("Error getting Course's Assignment")
+      );
+    }
+    throw error;
+  }
+};

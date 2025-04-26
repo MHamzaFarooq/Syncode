@@ -8,6 +8,9 @@ import VideosPageHeading, {
 } from "@/components/VideosPage/heading";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
+import AssignmentsPageContent, {
+  SkeletonAssignmentsPageContentPageContent,
+} from "./content-assignment";
 
 const VideosPageId = ({ id }) => {
   const { data, isLoading, isError, error } = useQuery({
@@ -20,6 +23,7 @@ const VideosPageId = ({ id }) => {
       <div className="flex flex-1 flex-col p-9">
         <SkeletonVideosPageHeading />
         <SkeletonVideosPageContent />
+        <SkeletonAssignmentsPageContentPageContent />
       </div>
     );
   }
@@ -42,10 +46,12 @@ const VideosPageId = ({ id }) => {
 
   const { course } = data;
   const videos = course.videos;
+  const assignments = course.assignments;
   return (
     <div className="flex flex-1 flex-col p-9">
       <VideosPageHeading course={course} />
       <VideosPageContent videos={videos} />
+      <AssignmentsPageContent assignments={assignments} />
     </div>
   );
 };

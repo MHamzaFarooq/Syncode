@@ -1,15 +1,15 @@
 import VideoPlaySVG from "@/assets/videoPlay";
 import Link from "next/link";
 
-const VideosPageContent = ({ videos }) => {
+const AssignmentsPageContent = ({ assignments }) => {
   return (
     <>
       <div className="my-9 font-medium">Content</div>
       <div className="flex flex-col gap-6">
-        {videos.length !== 0 &&
-          videos.map((item, index) => (
+        {assignments.length !== 0 &&
+          assignments.map((item, index) => (
             <Link
-              href={`/video-player/${item.video_id}`}
+              href={`/assignment/${item.assignment_id}`}
               key={index}
               className="flex items-center gap-4 cursor-pointer"
             >
@@ -17,7 +17,7 @@ const VideosPageContent = ({ videos }) => {
                 <VideoPlaySVG />
                 <div
                   className={`${
-                    index !== videos.length - 1 &&
+                    index !== assignments.length - 1 &&
                     item.watched &&
                     `absolute h-[39px] w-[1px] bg-white top-full -z-10`
                   }`}
@@ -26,15 +26,15 @@ const VideosPageContent = ({ videos }) => {
               <div>{item.name}</div>
             </Link>
           ))}
-        {videos.length === 0 && <div>No videos found.</div>}
+        {assignments.length === 0 && <div>No assignments found.</div>}
       </div>
     </>
   );
 };
 
-export default VideosPageContent;
+export default AssignmentsPageContent;
 
-export const SkeletonVideosPageContent = () => {
+export const SkeletonAssignmentsPageContentPageContent = () => {
   return (
     <>
       <div className="my-9 font-medium">Content</div>
