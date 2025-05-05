@@ -199,6 +199,25 @@ export const addAssignment = async (name, code, course_id) => {
   }
 };
 
+export const uploadAssignment = async (code, student_id, assignment_id) => {
+  try {
+    const response = await axiosInstance.post(
+      `/assignment/submit-assignment/`,
+      {
+        code,
+        student_id,
+        assignment_id,
+      }
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw error.response?.data || new Error("Failed to Upload Assignment");
+    }
+    throw error;
+  }
+};
+
 export const getAssignment = async (assignment_id) => {
   try {
     const response = await axiosInstance.get(
@@ -223,6 +242,72 @@ export const getCourseAssignments = async (course_id) => {
     if (axios.isAxiosError(error)) {
       throw (
         error.response?.data || new Error("Error getting Course's Assignment")
+      );
+    }
+    throw error;
+  }
+};
+
+export const getSubmissionStatus = async (assignment_id, student_id) => {
+  try {
+    const response = await axiosInstance.get(
+      `/assignment/get-assignment-status?assignment_id=${assignment_id}&student_id=${student_id}`
+    );
+    return response.data; // should include `submitted: true/false`
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw (
+        error.response?.data || new Error("Error getting submission status")
+      );
+    }
+    throw error;
+  }
+};
+
+export const getSubmissionsTeacher = async (teacher_id) => {
+  try {
+    const response = await axiosInstance.get(
+      `/teacher/get-teacher-submissions?teacher_id=${teacher_id}`
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw (
+        error.response?.data ||
+        new Error("Error getting teachers submission list")
+      );
+    }
+    throw error;
+  }
+};
+
+export const addFeedback = async (submission_id, teacher_id, feedback) => {
+  try {
+    const response = await axiosInstance.post(`/teacher/add-feedback/`, {
+      submission_id,
+      teacher_id,
+      feedback,
+    });
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw error.response?.data || new Error("Failed to Add Feedback");
+    }
+    throw error;
+  }
+};
+
+export const getStudentsFeedbackSubmissions = async (student_id) => {
+  try {
+    const response = await axiosInstance.get(
+      `/student/get-student-feedback-submissions?student_id=${student_id}`
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw (
+        error.response?.data ||
+        new Error("Error getting students feedback submission list")
       );
     }
     throw error;

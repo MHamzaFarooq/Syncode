@@ -7,7 +7,7 @@ const Admin = async () => {
   return (
     <>
       <DashboardHero name={session.teacher_name || "Teacher"} />
-      <Submissions />
+      <Submissions teacher_id={session.teacher_id} />
     </>
   );
 };
