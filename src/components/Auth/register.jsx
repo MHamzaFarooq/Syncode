@@ -1,11 +1,11 @@
 "use client";
+import { preRegister } from "@/actions/auth";
+import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import BorderButton from "../Button/borderButton";
 import AuthInputField from "./inputfield";
-import { useRouter } from "next/navigation";
-import { useMutation } from "@tanstack/react-query";
-import { register } from "@/actions/auth";
-import { setStudentDataInSession } from "@/actions/setSession";
+// import { setStudentDataInSession } from "@/actions/setSession";
 import { toast } from "sonner";
 
 const RegisterForm = () => {
@@ -18,10 +18,11 @@ const RegisterForm = () => {
 
   const registerMutation = useMutation({
     mutationFn: () =>
-      register(enroll, email, username, password, confirmPassword),
+      preRegister(enroll, email, username, password, confirmPassword),
     onSuccess: async (data) => {
-      toast.success("Registration Successful");
-      await setStudentDataInSession(data);
+      router.push(`/otp?flow=register&email=${encodeURIComponent(email)}`);
+      // toast.success("Registration Successful");
+      // await setStudentDataInSession(data);
     },
     onError: (error) => {
       toast.error(error?.error || "Registration Failed");

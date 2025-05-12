@@ -1,26 +1,27 @@
 "use client";
-import { login } from "@/actions/auth";
+import { prelogin } from "@/actions/auth";
+// import { setStudentDataInSession } from "@/actions/setSession";
+import { useCSRF } from "@/providers/csrf";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 import BorderButton from "../Button/borderButton";
-import GoogleButton from "../Button/google";
+// import GoogleButton from "../Button/google";
 import AuthInputField from "./inputfield";
-import { setStudentDataInSession } from "@/actions/setSession";
-import { useCSRF } from "@/providers/csrf";
 
 const LoginForm = () => {
   const { tokenLoaded, isLoading } = useCSRF();
   const router = useRouter();
-  const [email, setEmail] = useState("bruh@gmail.com");
-  const [password, setPassword] = useState("bruhmius");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const loginMutation = useMutation({
-    mutationFn: () => login(email, password),
+    mutationFn: () => prelogin(email, password),
     onSuccess: async (data) => {
-      toast.success("Login Successful");
-      await setStudentDataInSession(data);
+      router.push(`/otp?flow=login&email=${encodeURIComponent(email)}`);
+      // toast.success("Login Successful");
+      // await setStudentDataInSession(data);
     },
     onError: (error) => {
       toast.error(error?.error || "Login Failed");
@@ -53,10 +54,10 @@ const LoginForm = () => {
         parentClass={"w-full"}
         className="bg-[#0000FF] w-full"
       />
-      <div className="my-2 text-center text-[15px] leading-[31px] tracking-[-1.01%]">
+      {/* <div className="my-2 text-center text-[15px] leading-[31px] tracking-[-1.01%]">
         or continue with
       </div>
-      <GoogleButton onClick={() => {}} />
+      <GoogleButton onClick={() => {}} /> */}
       <div className="my-2 text-center text-[15px] leading-[31px] tracking-[-1.01%]">
         Don&apos;t have an account?
       </div>
